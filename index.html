@@ -306,6 +306,33 @@
     .email-icon { font-size: 1.2rem; }
     .contact-note { margin-top: 14px; font-size: 0.82rem; color: var(--gray-600); font-weight: 700; }
 
+    /* DONATION SECTION */
+    #donate { padding: 100px 5%; background: var(--gray-100); overflow: hidden; position: relative; }
+    .donate-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+    .donate-header { text-align: center; margin-bottom: 44px; }
+    .donate-card { background: var(--white); border-radius: var(--radius); border: 2px solid var(--blue-light); box-shadow: var(--shadow-card); overflow: hidden; }
+    .donate-top { background: linear-gradient(135deg, var(--baby-blue), var(--blue-dark)); padding: 40px 44px; color: var(--white); display: flex; align-items: center; gap: 24px; }
+    .donate-top-icon { font-size: 56px; flex-shrink: 0; animation: floatBob 3s ease-in-out infinite; }
+    .donate-top-text h3 { font-family: var(--font-display); font-size: 1.7rem; margin-bottom: 8px; }
+    .donate-top-text p { font-size: 0.97rem; font-weight: 600; opacity: 0.92; line-height: 1.7; max-width: 480px; }
+    .donate-body { padding: 40px 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .donate-cashapp-side { display: flex; flex-direction: column; gap: 20px; }
+    .cashapp-btn { display: inline-flex; align-items: center; gap: 14px; background: #00D64F; color: var(--white); padding: 18px 30px; border-radius: var(--radius-pill); font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; box-shadow: 0 6px 24px rgba(0,214,79,0.4); transition: var(--transition); text-decoration: none; width: fit-content; }
+    .cashapp-btn:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,214,79,0.5); color: var(--white); }
+    .cashapp-logo { width: 32px; height: 32px; background: var(--white); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cashapp-logo svg { width: 20px; height: 20px; }
+    .donate-cashtag { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-pale); border: 2px solid var(--blue-light); border-radius: var(--radius-pill); padding: 8px 18px; font-size: 0.92rem; font-weight: 800; color: var(--blue-dark); width: fit-content; }
+    .donate-bullets { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+    .donate-bullet { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; font-weight: 700; color: var(--text-sub); }
+    .donate-bullet span:first-child { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .donate-qr-side { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .donate-qr-wrap { background: var(--white); border: 3px solid var(--blue-light); border-radius: 20px; padding: 14px; box-shadow: var(--shadow-soft); transition: var(--transition); }
+    .donate-qr-wrap:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--baby-blue); }
+    .donate-qr-wrap img { width: 180px; height: 180px; border-radius: 10px; display: block; }
+    .donate-qr-label { font-size: 0.85rem; font-weight: 800; color: var(--gray-600); text-align: center; }
+    .donate-qr-label span { color: var(--blue-dark); }
+    .donate-disclaimer { text-align: center; margin-top: 28px; font-size: 0.8rem; font-weight: 700; color: var(--gray-600); background: var(--blue-pale); border-radius: var(--radius-sm); padding: 12px 20px; border: 1px solid var(--blue-light); }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -331,6 +358,12 @@
       /* ── TIGHTEN IMAGE PADDING ON SMALL SCREENS ── */
       .hero-card { padding: 24px 18px !important; max-width: 300px !important; }
       .team-photo { padding: 8px !important; }
+      /* ── DONATE ── */
+      .donate-top { flex-direction: column; text-align: center; padding: 30px 24px; gap: 14px; }
+      .donate-body { grid-template-columns: 1fr; padding: 30px 24px; gap: 28px; }
+      .donate-cashapp-side { align-items: center; text-align: center; }
+      .cashapp-btn { font-size: 1.05rem; padding: 15px 24px; }
+      .donate-qr-wrap img { width: 160px; height: 160px; }
     }
     @media (max-width: 480px) {
       .hero-btns { flex-direction: column; }
@@ -365,6 +398,7 @@
       <li><a href="#team">Team</a></li>
       <li><a href="#win">Our Win</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#donate">Support Us 💚</a></li>
       <li><a href="#qa" class="nav-cta">Ask Us! 🙋</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -376,6 +410,7 @@
     <a href="#team"    onclick="closeMobileNav()">👥 Team</a>
     <a href="#win"     onclick="closeMobileNav()">🏆 Our Win</a>
     <a href="#contact" onclick="closeMobileNav()">📬 Contact</a>
+    <a href="#donate"  onclick="closeMobileNav()">💚 Support Us</a>
     <a href="#qa"      onclick="closeMobileNav()">💬 Ask Us!</a>
   </div>
 </header>
@@ -445,7 +480,7 @@
       <div class="mission-bottom-icon">🌟</div>
       <div class="mission-bottom-text">
         <h3>Our Mission: Confidence for Every Student</h3>
-        <p>We believe that hygiene shouldn't be a barrier to learning, friendship, or success. WhiffWorks creates safe, confident environments in schools one bathroom at a time.</p>
+        <p>We believe that hygiene shouldn't be a barrier to learning, friendship, or success. WhiffWorks creates safe and confident environments in schools, one bathroom at a time.</p>
       </div>
     </div>
   </div>
@@ -617,6 +652,67 @@
   </div>
 </section>
 
+<!-- DONATION SECTION -->
+<section id="donate">
+  <div class="donate-inner">
+
+    <div class="donate-header reveal">
+      <div class="section-label">💚 Support WhiffWorks</div>
+      <h2 class="section-title">Help Us <span>Make It Happen</span></h2>
+      <p class="section-sub" style="margin:0 auto;">Every dollar goes directly toward building, testing, and launching WhiffWorks dispensers in schools across Georgia. Your support means everything to us.</p>
+    </div>
+
+    <div class="donate-card reveal">
+      <div class="donate-top">
+        <div class="donate-top-icon">💰</div>
+        <div class="donate-top-text">
+          <h3>Support Our Startup</h3>
+          <p>We're three students from Albany, GA turning a big idea into reality. Help us cover product development, materials, and get WhiffWorks into schools faster — one contribution at a time.</p>
+        </div>
+      </div>
+
+      <div class="donate-body">
+        <!-- LEFT: CashApp button + info -->
+        <div class="donate-cashapp-side">
+          <a href="https://cash.app/$whiffworksGA" target="_blank" rel="noopener noreferrer" class="cashapp-btn">
+            <div class="cashapp-logo">
+              <!-- CashApp dollar sign icon -->
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" rx="6" fill="#00D64F"/>
+                <path d="M12.75 6.5V7.26C14.18 7.55 15.25 8.56 15.25 9.75C15.25 10.16 14.91 10.5 14.5 10.5C14.09 10.5 13.75 10.16 13.75 9.75C13.75 9.2 13.09 8.75 12.25 8.75H11.75C10.92 8.75 10.25 9.28 10.25 9.93C10.25 10.47 10.74 10.93 11.42 11.07L13.33 11.46C14.54 11.71 15.25 12.55 15.25 13.57C15.25 14.76 14.18 15.77 12.75 16.06V16.75C12.75 17.16 12.41 17.5 12 17.5C11.59 17.5 11.25 17.16 11.25 16.75V16.06C9.82 15.77 8.75 14.76 8.75 13.57C8.75 13.16 9.09 12.82 9.5 12.82C9.91 12.82 10.25 13.16 10.25 13.57C10.25 14.12 10.91 14.57 11.75 14.57H12.25C13.08 14.57 13.75 14.04 13.75 13.39C13.75 12.85 13.26 12.39 12.58 12.25L10.67 11.86C9.46 11.61 8.75 10.77 8.75 9.75C8.75 8.56 9.82 7.55 11.25 7.26V6.5C11.25 6.09 11.59 5.75 12 5.75C12.41 5.75 12.75 6.09 12.75 6.5Z" fill="white"/>
+              </svg>
+            </div>
+            Donate via CashApp
+          </a>
+
+          <div class="donate-cashtag">💚 $whiffworksGA</div>
+
+          <div class="donate-bullets">
+            <div class="donate-bullet"><span>🧴</span><span>Funds go toward dispenser materials and production</span></div>
+            <div class="donate-bullet"><span>🏫</span><span>Helps us get into more schools faster</span></div>
+            <div class="donate-bullet"><span>🎓</span><span>Supports three student entrepreneurs from Albany, GA</span></div>
+            <div class="donate-bullet"><span>🏆</span><span>Backing the 2026 FLEX ABY First Place winners</span></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: QR code -->
+        <div class="donate-qr-side">
+          <div class="donate-qr-wrap">
+            <!-- QR CODE IMAGE — already embedded from your upload -->
+            <img src="cashapp-qr.png" alt="Scan to donate via CashApp $whiffworksGA" />
+          </div>
+          <div class="donate-qr-label">Scan with your phone camera<br><span>Opens CashApp automatically</span></div>
+        </div>
+      </div>
+
+      <div class="donate-disclaimer">
+        💙 WhiffWorks is a student-run startup. All donations are voluntary and go directly toward product development and school outreach. Thank you for believing in us!
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">💧 WhiffWorks</div>
@@ -627,6 +723,7 @@
     <li><a href="#team">Team</a></li>
     <li><a href="#win">Our Win</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#donate">Support Us</a></li>
     <li><a href="#qa">Ask Us!</a></li>
   </ul>
   <div class="footer-divider"></div>
